@@ -1,5 +1,5 @@
 # import data from csv file
-data <- read.csv("Sleep_Efficiency.csv", header = TRUE, sep = ",")
+data <- read.csv("Training_Data.csv", header = TRUE, sep = ",")
 
 # print conlumn names
 colnames(data)
