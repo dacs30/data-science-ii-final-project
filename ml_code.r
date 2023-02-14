@@ -18,3 +18,27 @@ abline(model, col = "red")
 
 #  get the predicted values
 confint(model, level = 0.95)
+
+# correlate sleep efficiency with Deep.sleep.percentage
+model2 <- lm(Sleep.efficiency ~ Deep.sleep.percentage, data = data)
+
+# print model summary
+summary(model2)
+
+# plot the data
+plot(data$Deep.sleep.percentage, data$Sleep.efficiency, xlab = "Deep Sleep Percentage", ylab = "Sleep Efficiency", main = "Sleep Efficiency vs Deep Sleep Percentage")
+
+# add the regression line
+abline(model2, col = "red")
+
+# correlate sleep efficiency with Light.sleep.percentage
+model3 <- lm(Sleep.efficiency ~ Light.sleep.percentage, data = data)
+
+# print model summary
+summary(model3)
+
+# plot the data
+plot(data$Light.sleep.percentage, data$Sleep.efficiency, xlab = "Light Sleep Percentage", ylab = "Sleep Efficiency", main = "Sleep Efficiency vs Light Sleep Percentage")
+
+# add the regression line
+abline(model3, col = "red")
