@@ -40,5 +40,16 @@ summary(model3)
 # plot the data
 plot(data$Light.sleep.percentage, data$Sleep.efficiency, xlab = "Light Sleep Percentage", ylab = "Sleep Efficiency", main = "Sleep Efficiency vs Light Sleep Percentage")
 
+# losgictic regression light sleep percentage and sleep efficiency
+model4 <- glm(Sleep.efficiency ~ Light.sleep.percentage, data = data, family = "binomial")
+
+# print model summary
+summary(model4)
+
+# plot the data
+plot(data$Age, data$Sleep.efficiency, xlab = "Age", ylab = "Sleep Efficiency", main = "Sleep Efficiency vs Age")
+
+abline(model4, col = "red")
+
 # add the regression line
 abline(model3, col = "red")
