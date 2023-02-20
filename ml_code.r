@@ -72,5 +72,5 @@ test_data$predicted_sleep_efficiency <- predict(model5, test_data)
 # print the predicted values
 test_data$predicted_sleep_efficiency
 
-# save only highest predicted values to csv file
-write.csv(test_data[order(test_data$predicted_sleep_efficiency, decreasing = TRUE),][1:10,], file = "Predicted_Sleep_Efficiency.csv", row.names = FALSE)
+# save highest predicted values per value to csv file
+write.csv(test_data, "predicted_sleep_efficiency.csv")
