@@ -53,3 +53,24 @@ abline(model4, col = "red")
 
 # add the regression line
 abline(model3, col = "red")
+
+# create a decision tree model
+library(rpart)
+library(rpart.plot)
+model5 <- rpart(Sleep.efficiency ~ Age + Deep.sleep.percentage + Light.sleep.percentage, data = data, method = "class")
+
+# print model summary
+summary(model5)
+
+# plot the model
+rpart.plot(model5)
+
+# predict sleep efficiency using the test data
+test_data <- read.csv("Testing_Data.csv", header = TRUE, sep = ",")
+test_data$predicted_sleep_efficiency <- predict(model5, test_data)
+
+# print the predicted values
+test_data$predicted_sleep_efficiency
+
+# save only highest predicted values to csv file
+write.csv(test_data[order(test_data$predicted_sleep_efficiency, decreasing = TRUE),][1:10,], file = "Predicted_Sleep_Efficiency.csv", row.names = FALSE)
