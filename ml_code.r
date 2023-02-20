@@ -54,6 +54,8 @@ abline(model4, col = "red")
 # add the regression line
 abline(model3, col = "red")
 
+# ======================================================
+
 # create a decision tree model
 library(rpart)
 library(rpart.plot)
