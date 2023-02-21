@@ -4,7 +4,7 @@
 import pandas as pd
 
 # Read the data
-df = pd.read_csv('predicted_sleep_efficiency.csv')
+df = pd.read_csv('predicted_s_effi_smoke_alch_no_age.csv')
 
 # get all columns that have predicted_sleep_efficiency as a column name or Sleep.efficiency
 df = df.filter(regex='predicted_sleep_efficiency')
@@ -24,4 +24,4 @@ for index, row in df.iterrows():
     df.loc[index, 'best_predicted_sleep_efficiency_confience'] = max_value
 
 # save the dataframe to a csv file
-df.to_csv('predicted_sleep_efficiency_processed.csv', index=False)
+df.to_csv('predicted_s_effi_smoke_alch_processed_no_age.csv', index=False)
